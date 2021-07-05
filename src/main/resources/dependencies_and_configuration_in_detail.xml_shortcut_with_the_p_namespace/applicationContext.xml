@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="chopsticks" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.xml_shortcut_with_the_p_namespace.Chopsticks" p:toolName="筷子"/>
+
+    <bean id="knifeAndPork" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.xml_shortcut_with_the_p_namespace.KnifeAndPork" p:toolName="knife and pork"/>
+
+    <bean id="chinese" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.xml_shortcut_with_the_p_namespace.Chinese" p:tool--ref="chopsticks"/>
+
+    <bean id="american" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.xml_shortcut_with_the_p_namespace.American" p:tool-ref="knifeAndPork"/>
+
+   </beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="superCollection"
+          class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.collection_merge.SuperCollection"
+          abstract="true">
+        <property name="list">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="subCollection"
+          class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.collection_merge.SubCollection" parent="superCollection">
+        <property name="list">
+            <list merge="true">
+                <value>ccc</value>
+                <value>aaa</value>
+                <value>ddd</value>
+            </list>
+        </property>
+
+    </bean>
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.compound_property_names.Address"/>
+
+
+    <bean id="employee" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.compound_property_names.Employee">
+        <property name="name" value="zhangsan"/>
+        <property name="address" ref="address"/>
+        <property name="address.companyAddr" value="北京海淀西二旗百度大厦"/>
+    </bean>
+</beans>

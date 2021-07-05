@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 方法注入 -->
+    <bean id="myRandomNumber"
+          class="com.delong.spring.ioc.dependencies.method_injection.lookup_method_injection.RandomNumber"
+          scope="prototype"/>
+
+    <bean id="abstractRandomNumber"
+          class="com.delong.spring.ioc.dependencies.method_injection.lookup_method_injection.AbstractRandomNumber"
+          scope="singleton">
+        <lookup-method name="createRandomNumber" bean="myRandomNumber"/>
+        <property name="randomNumber">
+            <ref bean="myRandomNumber"/>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="chopsticks" class="com.delong.spring.ioc.dependencies.di.constructor_based.type_ref.Chopsticks">
+        <constructor-arg type="java.lang.String" value="筷子"/>
+    </bean>
+
+    <bean id="knifeAndPork" class="com.delong.spring.ioc.dependencies.di.constructor_based.type_ref.KnifeAndPork">
+        <constructor-arg type="java.lang.String" value="knife and pork"/>
+    </bean>
+
+    <bean id="chinese" class="com.delong.spring.ioc.dependencies.di.constructor_based.type_ref.Chinese">
+        <constructor-arg type="com.delong.spring.ioc.dependencies.di.constructor_based.type_ref.Tool" ref="chopsticks"/>
+    </bean>
+
+    <bean id="american" class="com.delong.spring.ioc.dependencies.di.constructor_based.type_ref.American">
+       <constructor-arg type="com.delong.spring.ioc.dependencies.di.constructor_based.type_ref.Tool" ref="knifeAndPork"/>
+    </bean>
+
+   </beans>

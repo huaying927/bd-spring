@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="chopsticks" class="com.delong.spring.ioc.dependencies.di.setter_based.name_ref.Chopsticks">
+        <property name="toolName" value="筷子"/>
+    </bean>
+
+    <bean id="knifeAndPork" class="com.delong.spring.ioc.dependencies.di.setter_based.name_ref.KnifeAndPork">
+        <property name="toolName" value="knife and pork"/>
+    </bean>
+
+    <bean id="chinese" class="com.delong.spring.ioc.dependencies.di.setter_based.name_ref.Chinese">
+        <property name="tool" ref="chopsticks"/>
+    </bean>
+
+    <bean id="american" class="com.delong.spring.ioc.dependencies.di.setter_based.name_ref.American">
+        <property name="tool" ref="knifeAndPork"/>
+    </bean>
+
+   </beans>

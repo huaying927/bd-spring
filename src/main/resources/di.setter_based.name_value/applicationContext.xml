@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="chinese" class="com.delong.spring.ioc.dependencies.di.setter_based.name_value.Chinese">
+        <property name="name" value="张三疯"/>
+        <property name="age" value="110"/>
+    </bean>
+
+    <bean id="american" class="com.delong.spring.ioc.dependencies.di.setter_based.name_value.American">
+        <property name="name" value="Rod Johnson"/>
+        <property name="age" value="55"/>
+    </bean>
+
+   </beans>

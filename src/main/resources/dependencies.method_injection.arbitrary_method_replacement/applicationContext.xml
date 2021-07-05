@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="tool" class="com.delong.spring.ioc.dependencies.method_injection.arbitrary_method_replacement.ConcreteTool">
+	    <replaced-method name="realWork" replacer="chinese"/>
+	</bean>
+
+	<bean id="chinese" class="com.delong.spring.ioc.dependencies.method_injection.arbitrary_method_replacement.Chinese">
+		<property name="tool" ref="tool"/>
+	</bean>
+</beans>

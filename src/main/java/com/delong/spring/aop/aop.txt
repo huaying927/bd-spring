@@ -1,0 +1,50 @@
+AOP(Aspect-Oriented Programming):编程的基本单位是方面，是面向
+对象编程的一种有效补充，面向方面关注的是类与类的横向关系，而面向对象
+编程关注的是类与类的纵向关系。一般在Spring中主要使用在基于安全或
+事务管理这方面
+
+Spring AOP的实现方式是JDK的动态代理和CGlib代理
+JDK动态代理是Spring的默认实现方式，只能代理接口
+CGlib代理不仅可以代理接口还可以代理类
+Spring AOP代理只能用在方法上
+AspectJ(第三方的AOP框架)
+
+
+Advice(通知/增强)：
+Join point:没有具体代码，就是一个抽象概念，
+方面织入到某一个方法的桥梁
+Point cut：让方面中的某一个行为在具体业务方法中的执行。。。
+Aspect：额外的增强的功能
+
+Aspect=Advice+Point cut
+
+
+
+IO流：
+Decorator Pattern:
+    BufferedReader br =
+                 new BufferedReader(
+                      new InputStreamReader(
+                         new DataInputStream(
+                              new BufferedInputStream(
+                                  new FileInputStream(
+                                       new  File("")
+                                  )
+                              )
+                         )
+                     )
+                 );
+
+JUC(java.utils.concurrent)
+synchronized
+StringBuffer(StringBuilder)
+Vector(ArrayList)   CopyOnWriteArrayList
+Hashtable(HashMap:红黑树)
+Cache(缓存):CPU和内存在数据传输的过程中用到的一块内存区域
+Buffer:内存和磁盘在数据传输的过程中用到的一块内存区域
+Dynamic Proxy Pattern：
+
+
+Ant-->Maven-->Gradle
+
+cvs->svn->git(分布式的版本管理系统) github(gitee)

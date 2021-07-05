@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="chinese" class="com.delong.spring.ioc.dependencies.di.constructor_based.type_value.Chinese">
+        <constructor-arg>
+            <value type="java.lang.String">张三</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value type="int">23</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="american" class="com.delong.spring.ioc.dependencies.di.constructor_based.type_value.American">
+        <constructor-arg type="int" value="32"/>
+        <constructor-arg type="java.lang.String" value="Rod Johnson"/>
+    </bean>
+
+   </beans>

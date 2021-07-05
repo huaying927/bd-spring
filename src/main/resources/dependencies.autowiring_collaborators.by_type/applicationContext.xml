@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byType">
+
+    <bean id="chopsticks" class="com.delong.spring.ioc.dependencies.autowiring_collaborators.by_type.Chopsticks">
+        <property name="toolName" value="筷子"/>
+    </bean>
+
+    <bean id="knifeAndPork" class="com.delong.spring.ioc.dependencies.autowiring_collaborators.by_type.KnifeAndPork">
+        <property name="toolName">
+            <value>knife and pork</value>
+        </property>
+    </bean>
+
+    <bean id="chinese" class="com.delong.spring.ioc.dependencies.autowiring_collaborators.by_type.Chinese"/>
+
+
+    <bean id="american" class="com.delong.spring.ioc.dependencies.autowiring_collaborators.by_type.American"/>
+
+</beans>

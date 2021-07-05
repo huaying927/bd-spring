@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="employee" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee">
+        <property name="name" value="zkg"/>
+    </bean>
+    <bean id="traditionalCollections" class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.traditional_collections.TraditionalCollections">
+        <!--注入数组元素-->
+        <property name="strArr">
+             <array>
+                 <value>111</value>
+                 <value>aaa</value>
+                 <value>ddd</value>
+                 <value>aaa</value>
+             </array>
+         </property>
+
+        <!--注入List-->
+        <property name="list">
+            <list>
+                <value>111</value>
+                <value>aaa</value>
+                <value>ddd</value>
+                <value>aaa</value>
+                <ref bean="employee"/>
+                <ref bean="employee"/>
+                <bean class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee"/>
+                <bean class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee"/>
+            </list>
+        </property>
+
+        <!--注入Set-->
+        <property name="set">
+            <set>
+                <value>111</value>
+                <value>aaa</value>
+                <value>ddd</value>
+                <value>aaa</value>
+                <ref bean="employee"/>
+                <ref bean="employee"/>
+                <bean class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee">
+                    <property name="name" value="zkg2"/>
+                </bean>
+                <bean class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee">
+                    <property name="name" value="zkg2plus"/>
+                </bean>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="a" value="aaa"/>
+                <entry key="b">
+                    <value>bbb</value>
+                </entry>
+                <entry key="c" value="ccc"/>
+                <entry key="d" value-ref="employee"/>
+                <entry key="e" value-ref="employee"/>
+                <entry key="f">
+                    <bean class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee">
+                       <property name="name" value="test map"/>
+                    </bean>
+                </entry>
+
+                <entry key="g">
+                    <bean class="com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee">
+                        <property name="name" value="test map2"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="a">aaa</prop>
+                <prop key="b">bbb</prop>
+                <prop key="c">employee</prop>
+                <prop key="d">employee</prop>
+                <prop key="e">com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee</prop>
+                <prop key="f">com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee</prop>
+            </props>
+        </property>
+
+<!--        <property name="properties">-->
+<!--            <value>-->
+<!--                a = aaa-->
+<!--                b = bbb-->
+<!--                c = employee-->
+<!--                d = employee-->
+<!--                e = com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee-->
+<!--                f = com.delong.spring.ioc.dependencies.dependencies_and_configuration_in_detail.collections.model.Employee-->
+<!--            </value>-->
+<!--        </property>-->
+    </bean>
+</beans>

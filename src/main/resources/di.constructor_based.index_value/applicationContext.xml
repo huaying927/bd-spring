@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="chinese" class="com.delong.spring.ioc.dependencies.di.constructor_based.index_value.Chinese">
+        <constructor-arg index="0" value="张三疯"/>
+        <constructor-arg index="1" value="100"/>
+    </bean>
+
+    <bean id="american" class="com.delong.spring.ioc.dependencies.di.constructor_based.index_value.American">
+        <constructor-arg index="1" value="32"/>
+        <constructor-arg index="0" value="Rod Johnson"/>
+    </bean>
+
+   </beans>
